@@ -8,5 +8,7 @@ class GamesController < ApplicationController
   end
 
   def score
+    @word = params[:word]
+    @batch = params[:letters]
   end
 end

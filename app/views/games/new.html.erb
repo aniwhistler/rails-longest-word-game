@@ -1,7 +1,15 @@
-<h1>New Game</h1>
+<h1 class="m-4">New Game</h1>
 
-<div class="d-flex">
+<div class="d-flex m-5">
   <% @letters.each do |letter| %>
-    <p class="p-2 m-2 bg-info border border-2"><%= letter %></p>
+    <p class="px-4 py-2 m-2 bg-info border border-3 rounded" style="font-size: 2rem; color:white; font-family:'Times New Roman', Times, serif"><%= letter.upcase %></p>
   <% end %>
-<div>
+</div>
+
+<form class="d-inline-flex flex-column mx-5" action="score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <label for="word" class="mb-3">What's the longest word you can find?</label>
+  <input type="text" id="word" name="word">
+  <input type="submit" value="Play <% params[:word] %>">
+</form>
