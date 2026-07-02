@@ -1,4 +1,11 @@
 <h1 class="m-4">Results</h1>
 
-<h3> <%= @word %> </h3>
-<h3> <%= @batch %> </h3>
+<div class="m-4">
+  <h3> <%= @resultsMessage %> </h3>
+
+  <h4> <%= "It's worth #{@score} points!" %> </h4>
+
+  <h4> <%= "You now have a total of #{session[:global_score]} points!" %> </h4>
+
+  <a href="new">Play again?</a>
+</div>
